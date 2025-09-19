@@ -5,7 +5,7 @@ Here's a repository currently with 3 of the games I've created, these are pretty
 ##Floppy Disk
 This is a really basic game, based on the "Flappy bird" game, pretty straight forward.
 
-###$Controls: 
+###Controls: 
 - Use Space Bar to jump
 - Click on the top left menu to adjust speed
 <img width="1150" height="707" alt="image" src="https://github.com/user-attachments/assets/2707edd7-48e7-457a-899d-4b8965b2cb67" />
@@ -14,7 +14,7 @@ This is a really basic game, based on the "Flappy bird" game, pretty straight fo
 ##Undyne
 This game I started it as an idea based on the boss fight against Undyne in Undertale, but it evolved somehow to what it is. You basically have to defend that box in the middle.
 
-###$Controls:
+###Controls:
 - Click where you want to shoot
 - Swing the mouse to use the pole
 - Use Space Bar to defend yourself (It has a 5 second cooldown)
@@ -24,6 +24,6 @@ This game I started it as an idea based on the boss fight against Undyne in Unde
 ##SpaceShipMinigame
 A little minigame where you are supposed to be in space and there are asteroid coming your way, some are breakable and other unbreakable. Each time you jump with your spaceship it shoots, so becareful.
 
-###$Controls:
+###Controls:
 - Use Space Bar to jump and shoot
 <img width="1152" height="676" alt="image" src="https://github.com/user-attachments/assets/cb25f221-d596-4381-8c7b-d9ffa9e3e3e7" />
