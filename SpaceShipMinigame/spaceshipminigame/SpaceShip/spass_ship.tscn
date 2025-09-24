@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjgpmi7o3tltr"]
+
+[ext_resource type="PackedScene" uid="uid://05m2tmo67bm3" path="res://SpaceShip/SpaceShip.tscn" id="1_qltd7"]
+[ext_resource type="PackedScene" uid="uid://c7pe13mg5qmuf" path="res://SpaceShip/asteroidColumn.tscn" id="4_4yqol"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_apipy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l7vdr"]
+size = Vector2(20, 295)
+
+[node name="SpassShipScene" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="SpaceShip" parent="." instance=ExtResource("1_qltd7")]
+position = Vector2(-442, 0)
+spaceShipScene = ExtResource("1_qltd7")
+
+[node name="borderArea" type="Area2D" parent="." groups=["leftBoundary"]]
+position = Vector2(-697, 1)
+rotation = 1.5708
+scale = Vector2(0.6, 0.6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="borderArea"]
+shape = SubResource("WorldBoundaryShape2D_apipy")
+
+[node name="Spawner" parent="." instance=ExtResource("4_4yqol")]
+position = Vector2(687, 0)
+spaceShipScene = ExtResource("1_qltd7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-455, 335)
+rotation = -1.5708
+scale = Vector2(0.6, 0.6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1.66671, -5.34058e-05)
+shape = SubResource("RectangleShape2D_l7vdr")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1118.33, 36.6668)
+shape = SubResource("RectangleShape2D_l7vdr")

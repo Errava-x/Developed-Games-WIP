@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7pe13mg5qmuf"]
+
+[ext_resource type="Script" uid="uid://8tw0x2cn3qdy" path="res://asteroidColumn.gd" id="1_jejq7"]
+[ext_resource type="PackedScene" uid="uid://d60wsg6tk44t" path="res://Bad/breakable_asteroid.tscn" id="2_722j7"]
+[ext_resource type="PackedScene" uid="uid://cng1p8n57kopc" path="res://Bad/unbreakable_asteroid.tscn" id="3_lqxbp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_722j7"]
+size = Vector2(31, 651)
+
+[node name="Asteroid Column" type="CharacterBody2D"]
+script = ExtResource("1_jejq7")
+breakableAsteroidScene = ExtResource("2_722j7")
+unbreakableAsteroidScene = ExtResource("3_lqxbp")
+
+[node name="marker1" type="Marker2D" parent="."]
+position = Vector2(0, -310)
+scale = Vector2(0.6, 0.6)
+
+[node name="marker2" type="Marker2D" parent="."]
+position = Vector2(0, -209)
+scale = Vector2(0.6, 0.6)
+
+[node name="marker3" type="Marker2D" parent="."]
+position = Vector2(0, -111)
+scale = Vector2(0.6, 0.6)
+
+[node name="marker4" type="Marker2D" parent="."]
+position = Vector2(0, -1.00001)
+scale = Vector2(0.6, 0.6)
+
+[node name="marker5" type="Marker2D" parent="."]
+position = Vector2(0, 102)
+scale = Vector2(0.6, 0.6)
+
+[node name="marker6" type="Marker2D" parent="."]
+position = Vector2(0, 207)
+scale = Vector2(0.6, 0.6)
+
+[node name="marker7" type="Marker2D" parent="."]
+position = Vector2(0, 311)
+scale = Vector2(0.6, 0.6)
+
+[node name="Area2D" type="Area2D" parent="." groups=["columnArea"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1.5, -2.5)
+shape = SubResource("RectangleShape2D_722j7")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

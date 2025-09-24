@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://05m2tmo67bm3"]
+
+[ext_resource type="Texture2D" uid="uid://208w8gcgvwro" path="res://icon.svg" id="1_ejkqe"]
+[ext_resource type="Script" uid="uid://bsvs18353oc4n" path="res://SpaceShip/space_ship.gd" id="1_el7yo"]
+[ext_resource type="PackedScene" uid="uid://42gm5k0vykwl" path="res://SpaceShip/bulletScene.tscn" id="2_3r405"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_el7yo"]
+radius = 22.8035
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3r405"]
+size = Vector2(180.769, 44.6154)
+
+[node name="SpaceShip" type="CharacterBody2D"]
+scale = Vector2(0.65, 0.65)
+script = ExtResource("1_el7yo")
+bulletScene = ExtResource("2_3r405")
+
+[node name="Icon2" type="Sprite2D" parent="."]
+position = Vector2(55, 0)
+scale = Vector2(0.61323, 0.170815)
+texture = ExtResource("1_ejkqe")
+
+[node name="ColorRect" type="ColorRect" parent="Icon2"]
+offset_left = 2.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 65.0
+color = Color(0, 0, 0, 0.831373)
+
+[node name="ColorRect2" type="ColorRect" parent="Icon2"]
+offset_left = 49.0
+offset_top = -29.0
+offset_right = 64.0
+offset_bottom = 29.0
+color = Color(0.268637, 0, 0, 0.831373)
+
+[node name="Icon" type="Sprite2D" parent="."]
+scale = Vector2(1.1616, 0.268846)
+texture = ExtResource("1_ejkqe")
+
+[node name="ColorRect3" type="ColorRect" parent="Icon"]
+offset_left = -64.0
+offset_top = -67.0
+offset_right = 64.0
+offset_bottom = 67.0
+color = Color(0, 0.545852, 0.993338, 0.831373)
+
+[node name="Area2D" type="Area2D" parent="." groups=["shipArea"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(-2.825, 1)
+shape = SubResource("CircleShape2D_el7yo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4.61539, 4.61538)
+shape = SubResource("RectangleShape2D_3r405")
+debug_color = Color(0.91638, 0.167593, 0.582649, 0.42)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
